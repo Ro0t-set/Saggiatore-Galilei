@@ -1,22 +1,34 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
+{% extends 'articoli/base.html' %}
 
-      <div>
-          <h1><a href="/">Saggiatore</a></h1>
-      </div>
+{% block content %}
 
-      {% for articolo in articoli %}
-          <div>
-              <p>published: {{ articolo.published_date }}</p>  <p>{{articolo.author}}</p>
+<form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">indietro</a>
+  <p>numero corsi tot: {{articoli.count}}</p>
+</form>
 
-              <h1><a href="">{{ articolo.titolo }}</a></h1>
-              <p>{{ articolo.text|linebreaksbr }}</p>
-          </div>
-      {% endfor %}
 
-      </body>
-    </body>
-</html>
+
+
+    {% for articolo in articoli%}
+<div class="well">
+
+    <div class="articoli">
+
+
+            <div class="date">
+                {{ corso.published_date }}
+
+
+            </div>
+            <h3><a href="">{{ articolo.titolo }}</a></h3>
+            <p>{{ articolo.text }}</p>
+            <h10>{{ articolo.author }}</h10>
+            <p>{{articolo.id}} </p>
+
+
+
+        </div>
+</div>
+    {% endfor %}
+
+{% endblock content %}
