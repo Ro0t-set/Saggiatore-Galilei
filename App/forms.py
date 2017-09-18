@@ -18,8 +18,4 @@ class ArticoloForm(forms.ModelForm):
 
 class CercaArticoli(forms.Form):
     q = forms.CharField(label='nome', max_length="100")
-
-class FiltroAutore(forms.ModelForm):
-    class Meta:
-        model = Articolo
-        fields = ['author',]
+    #autore = forms.CharField(label='nome', max_length="100")

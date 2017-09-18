@@ -1,0 +1,10 @@
+{% extends 'articoli/base.html' %}
+{% block content %}
+
+    {% for articolo in articoli%}
+      {{ articolo.published_date }}  <h10>{{ articolo.author }}</h10>
+                <h3><a href="">{{ articolo.titolo }}</a></h3>
+                <p>{{ articolo.text }}</p>
+{% endfor %}
+
+{% endblock %}

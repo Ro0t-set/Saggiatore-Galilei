@@ -3,6 +3,7 @@
 {% block content %}
 
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">indietro</a>
+
   <p>numero corsi tot: {{articoli.count}}</p>
 </form>
 
@@ -10,25 +11,27 @@
 
 
     {% for articolo in articoli%}
-<div class="well">
-
-    <div class="articoli">
 
 
-            <div class="date">
-                {{ corso.published_date }}
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+                  <h3><a href="">{{ articolo.titolo }}</a></h3>
+                {{ articolo.published_date }}
+                 <h10>{{ articolo.author }}</h10>
+                 <br>
+
+                 <form action="/vedi_tutto" method="get">
+                   <input  type="submit" name="q" value="{{ articolo.titolo }}"><br>
+                 </form>
 
 
-            </div>
-            <h3><a href="">{{ articolo.titolo }}</a></h3>
-            <p>{{ articolo.text }}</p>
-            <h10>{{ articolo.author }}</h10>
-            <p>{{articolo.id}} </p>
-
-
-
+          </div>
         </div>
-</div>
+      </div>
+    </div>
     {% endfor %}
 
 {% endblock content %}
