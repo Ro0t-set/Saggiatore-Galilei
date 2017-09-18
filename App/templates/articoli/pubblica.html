@@ -1,9 +1,10 @@
 {% extends 'articoli/base.html' %}
 {% block content %}
+  <h4>Se sei loggato come amministratore <a href="/admin">clicca qui</a></h4>
     <h1>Nuovo Articolo</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Salva</button>
+        <button type="submit" class="save btn btn-default">Pubblica</button>
     </form>
 
 {% endblock %}

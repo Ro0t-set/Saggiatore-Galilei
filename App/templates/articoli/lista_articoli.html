@@ -12,12 +12,16 @@
 
     {% for articolo in articoli%}
 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
 
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img src="..." alt="...">
           <div class="caption">
+
+
+            <div class="col-md-3"></div>
                   <h3><a href="">{{ articolo.titolo }}</a></h3>
                 {{ articolo.published_date }}
                  <h10>{{ articolo.author }}</h10>
@@ -26,12 +30,18 @@
                  <form action="/vedi_tutto" method="get">
                    <input  type="submit" name="q" value="{{ articolo.titolo }}"><br>
                  </form>
+               </div>
 
 
           </div>
         </div>
       </div>
     </div>
+    </div>
+
+
     {% endfor %}
+
+
 
 {% endblock content %}
