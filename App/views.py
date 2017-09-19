@@ -25,7 +25,7 @@ from django.utils.html import strip_tags
 
 def lista_articoli(request):
 
-    articoli =  Articolo.objects.all()
+    articoli =  Articolo.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
     form = CercaArticoli(request.GET)
     if form.is_valid():

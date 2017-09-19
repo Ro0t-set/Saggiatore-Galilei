@@ -1,5 +1,7 @@
 {% extends 'articoli/base.html' %}
 
+
+
 {% block content %}
 
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">indietro</a></form>
@@ -15,7 +17,7 @@
     {% if articolo.convalida == True %}
 
     <div class="container">
-      <div class="row">
+    
         <div class="col-md-3">
 
         <div class="thumbnail">
@@ -23,7 +25,7 @@
           <div class="caption">
 
 
-            <div class="col-md-3"></div>
+
                   <h3><a href="">{{ articolo.titolo }}</a></h3>
                 {{ articolo.published_date }}
                  <h10>{{ articolo.author }}</h10>
@@ -44,7 +46,8 @@
     {% endif %}
     {% endfor %}
 
-
-
+<div class="col-md-10">
+<p>creato da<a>Tommaso Patriti</a> (4F)</p>
+</div>
 
 {% endblock content %}
