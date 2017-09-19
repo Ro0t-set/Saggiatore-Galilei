@@ -2,9 +2,11 @@
 {% block content %}
 
     {% for articolo in articoli%}
+      {% if articolo.convalida == True %}
       {{ articolo.published_date }}  <h10>{{ articolo.author }}</h10>
                 <h3><a href="">{{ articolo.titolo|safe }}</a></h3>
                 <p>{{ articolo.text|safe }}</p>
+  {% endif %}              
 {% endfor %}
 
 {% endblock %}

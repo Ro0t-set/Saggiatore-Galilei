@@ -14,6 +14,7 @@ class Articolo(models.Model):
     categorie = models.ForeignKey('Categoria')
     titolo = models.CharField(max_length=100)
     text = models.TextField()
+    convalida= models.BooleanField(default=False)
 
     created_date = models.DateTimeField(
         default=timezone.now)

@@ -24,12 +24,13 @@ from django.utils.html import strip_tags
 @csrf_protect
 
 def lista_articoli(request):
+
     articoli =  Articolo.objects.all()
 
     form = CercaArticoli(request.GET)
     if form.is_valid():
         articoli = articoli.filter(titolo= form.cleaned_data["q"])
-                                    
+
 
 
 
