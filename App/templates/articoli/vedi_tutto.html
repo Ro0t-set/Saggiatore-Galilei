@@ -3,8 +3,8 @@
 
     {% for articolo in articoli%}
       {{ articolo.published_date }}  <h10>{{ articolo.author }}</h10>
-                <h3><a href="">{{ articolo.titolo }}</a></h3>
-                <p>{{ articolo.text }}</p>
+                <h3><a href="">{{ articolo.titolo|safe }}</a></h3>
+                <p>{{ articolo.text|safe }}</p>
 {% endfor %}
 
 {% endblock %}

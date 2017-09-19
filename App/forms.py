@@ -18,4 +18,4 @@ class ArticoloForm(forms.ModelForm):
 
 class CercaArticoli(forms.Form):
     q = forms.CharField(label='nome', max_length="100")
-    #autore = forms.CharField(label='nome', max_length="100")
+    #autore = forms.ModelChoiceField(queryset=User.objects.all())

@@ -29,7 +29,14 @@ def lista_articoli(request):
     form = CercaArticoli(request.GET)
     if form.is_valid():
         articoli = articoli.filter(titolo= form.cleaned_data["q"])
-        #articoli = articoli.filter(author= form.cleaned_data["autore"])
+                                    
+
+
+
+    #autori_filter= Articolo.objects.all()
+    #autori_filter = request.GET.get("autore")
+    #if autori_filter:
+        #autori_filter = articoli.filter(author= form.cleaned_data["autore"])
 
 
 
