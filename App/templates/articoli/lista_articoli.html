@@ -7,17 +7,16 @@
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">indietro</a></form>
 
 
-  <p>numero corsi tot: {{articoli.count}}</p>
 
 
 
 
 
     {% for articolo in articoli%}
-    {% if articolo.convalida == True %}
+
 
     <div class="container">
-    
+
         <div class="col-md-3">
 
         <div class="thumbnail">
@@ -43,8 +42,25 @@
     </div>
     </div>
 
-    {% endif %}
+
     {% endfor %}
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if articoli.convalida.has_previous %}
+            <a href="?page={{ articoli.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ articoli.number }} of {{ articoli.paginator.num_pages }}.
+        </span>
+
+        {% if articoli.has_next %}
+            <a href="?page={{ articoli.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 
 <div class="col-md-10">
 <p>creato da<a>Tommaso Patriti</a> (4F)</p>

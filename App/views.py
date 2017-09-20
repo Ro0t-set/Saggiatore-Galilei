@@ -20,16 +20,29 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 
 @csrf_protect
 
 def lista_articoli(request):
 
-    articoli =  Articolo.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    articoli =  Articolo.objects.filter(convalida = True)
+
 
     form = CercaArticoli(request.GET)
     if form.is_valid():
         articoli = articoli.filter(titolo= form.cleaned_data["q"])
+
+    paginator = Paginator(articoli, 3)
+    page = request.GET.get('page')
+    try:
+        articoli = paginator.page(page)
+    except PageNotAnInteger:
+        articoli = paginator.page(1)
+    except EmptyPage:
+        articoli = paginator.page(paginator.num_pages)
+
+
 
 
 

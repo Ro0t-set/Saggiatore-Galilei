@@ -27,3 +27,5 @@ class Articolo(models.Model):
 
     def __str__(self):
         return self.titolo
+    class Meta:
+        ordering = ["-published_date"]
