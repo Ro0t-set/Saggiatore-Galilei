@@ -16,10 +16,11 @@
 
 
     <div class="container">
-
+<div class="row">
         <div class="col-md-3">
+            <div class="col-md-12">  </div>
 
-        <div class="thumbnail">
+            <div class="thumbnail">
           <img src="..." alt="...">
           <div class="caption">
 
@@ -27,7 +28,7 @@
 
                   <h3><a href="">{{ articolo.titolo }}</a></h3>
                 {{ articolo.published_date }}
-                 <h10>{{ articolo.author }}</h10>
+                 <b>{{ articolo.author }}</b>
                  <br>
 
                  <form action="/vedi_tutto" method="get">
@@ -37,6 +38,7 @@
 
 
           </div>
+        </div>
         </div>
       </div>
     </div>
