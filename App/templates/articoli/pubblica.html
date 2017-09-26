@@ -3,6 +3,10 @@
   <h4>Se sei loggato come amministratore <a href="/admin">clicca qui</a></h4>
   <h5><h2>ATTENZIONE</h2> l'articolo verà verrà convalidato solo dopo la revisione di un amministratore</h5>
     <h1>Nuovo Articolo</h1>
+    <br>
+  
+
+    </style>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Pubblica</button>
