@@ -214,13 +214,12 @@ li a:hover {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   padding: 24px;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1px;
   border-radius: 2px;
   background-color: #fff;
   height: 400px;
   width: 400px;
   border:solid;
-  margin:1px;
   border-color: gray;
 }
 .hoverable {
@@ -254,6 +253,14 @@ input {
 input:hover {
     border-color: blue;
     color: blue;
+}
+
+.login{
+    position: relative;
+    bottom: -400px;
+    background-image: url(img/cocacola-563x353.jpg);
+    height: 500px;
+    width: 500px;
 }
 
 

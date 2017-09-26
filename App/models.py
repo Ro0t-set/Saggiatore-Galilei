@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from PIL import Image
 
 class Categoria(models.Model):
     categorie = models.CharField(max_length=100)
@@ -14,6 +15,7 @@ class Articolo(models.Model):
     categorie = models.ForeignKey('Categoria')
     titolo = models.CharField(max_length=100)
     text = models.TextField()
+    foto = models.FileField(upload_to='media')
     convalida= models.BooleanField(default=False)
 
     created_date = models.DateTimeField(

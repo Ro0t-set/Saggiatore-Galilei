@@ -1,5 +1,6 @@
-<!-- login.html --><center>
 
+{% extends 'articoli/base.html' %}
+<!-- login.html -->
 {% block title %}Login{% endblock %}
 {% block head %}{% endblock %}
 {% block content %}
@@ -16,21 +17,23 @@
     </form>
     <a href="/register">Register</a>
 -->
-
+<center>
 <div class="login">
     {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
+        <p class="login_error">Your username and password didn't match. Please try again.</p>
     {% endif %}
     <form class="form" method="post" action="." >{% csrf_token %}
-        <input type="text" placeholder="Username" name="username">
+        <input class="username" type="text" placeholder="Username" name="username">
         <br>
-        <input type="password" placeholder="Password" name="password">
+        <input  class="password" type="password" placeholder="Password" name="password">
         <br>
         <button type="submit"  value="Login" id="login-button">Login</button>
        
         <input type="hidden" name="next" value="{% url 'pubblica' %}" />
     </form>
 </div>
+<div class="bakground"></div>
+
+</center>
 
 {% endblock %}
-</center>

@@ -21,6 +21,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
 
 @csrf_protect
 
@@ -67,7 +70,7 @@ def vedi_tutto(request):
 @login_required(login_url='/login/')
 def pubblica(request):
     if request.method == "POST":
-        form = ArticoloForm(request.POST)
+        form = ArticoloForm(request.POST, request.FILES)
         if form.is_valid():
             articolo = form.save(commit=False)
             articolo.author = request.user

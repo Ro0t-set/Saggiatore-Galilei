@@ -13,7 +13,7 @@ from .models import Articolo
 class ArticoloForm(forms.ModelForm):
     class Meta:
         model = Articolo
-        fields = ['categorie', 'titolo', 'text', ]
+        fields = ['categorie', 'titolo', 'text','foto' ]
 
 
 class CercaArticoli(forms.Form):
