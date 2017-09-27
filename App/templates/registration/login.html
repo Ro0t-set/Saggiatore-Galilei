@@ -1,22 +1,11 @@
 
 {% extends 'articoli/base.html' %}
-<!-- login.html -->
 {% block title %}Login{% endblock %}
 {% block head %}{% endblock %}
 {% block content %}
     
 
-    <!--
-    <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
-            <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
-        </table>
-        <input type="submit" value="Login" />
-        <input type="hidden" name="next" value="/home" />
-    </form>
-    <a href="/register">Register</a>
--->
+
 <center>
 <div class="login">
     {% if form.errors %}
@@ -25,15 +14,18 @@
     <form class="form" method="post" action="." >{% csrf_token %}
         <input class="username" type="text" placeholder="Username" name="username">
         <br>
+        <br>
         <input  class="password" type="password" placeholder="Password" name="password">
         <br>
-        <button type="submit"  value="Login" id="login-button">Login</button>
+        <br>
+        <button class="login-button" type="submit"  value="Login" id="login-button">Login</button>
        
         <input type="hidden" name="next" value="{% url 'pubblica' %}" />
     </form>
 </div>
-<div class="bakground"></div>
-
 </center>
+
+
+
 
 {% endblock %}

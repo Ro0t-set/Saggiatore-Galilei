@@ -1,0 +1,38 @@
+.login{
+	height: 400px;
+	width: 400px;
+	border:solid 1px;
+	padding: 100px; 
+	border-radius: 17px;
+}
+
+.username{
+	border:solid 2px;
+	border-radius: 17px 17px 17px 17px;
+	padding: 10px;
+	opacity: 0.5;
+	transition-duration: 0.5s;
+}
+
+.password{
+	border:solid 2px;
+	border-radius: 17px 17px 17px 17px;
+	padding: 10px;
+	opacity: 0.5;
+	transition-duration: 0.5s;
+}
+
+.username:hover{
+	padding: 12px;
+	opacity: 0.6;
+	
+}
+.password:hover{
+	padding: 12px;
+	opacity: 0.6;
+	
+}
+
+.login-button{
+	background-color: black;
+}

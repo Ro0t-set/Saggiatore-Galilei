@@ -255,12 +255,5 @@ input:hover {
     color: blue;
 }
 
-.login{
-    position: relative;
-    bottom: -400px;
-    background-image: url(img/cocacola-563x353.jpg);
-    height: 500px;
-    width: 500px;
-}
 
 
