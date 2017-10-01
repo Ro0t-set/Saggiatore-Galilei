@@ -52,7 +52,8 @@ width:200px;
 margin-top: 2%
  float:right;
 left:-200;
-background-color: white;    
+background-color: white;  
+z-index: 0;  
 }
 .menu ul{
     width:100%;
@@ -214,13 +215,13 @@ li a:hover {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   padding: 24px;
-  margin: 1px;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: #fff;
   height: 400px;
   width: 400px;
-  border:solid;
-  border-color: gray;
+  border:solid 1px;
+  border-color: #20B2AA;
+ 	align-self: center;
 }
 .hoverable {
   -webkit-transition: -webkit-box-shadow .25s;
@@ -234,26 +235,13 @@ li a:hover {
           box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.foto-icona{
+	width: 350px; height: auto;
+	border-radius: 3px;
 }
 
-input {
-    font-size: 20px;
-    background-color: white;
-    opacity: 0.2;
-    border-color: black;
-    color: black;
-    padding: 5px 30px;
-    outline-color: blue;
-    line-height: 1.3333333;
-    border-radius: 4px;
-    box-shadow: none;
-    margin-top: 10px;
-}
 
-input:hover {
-    border-color: blue;
-    color: blue;
-}
+
 
 
 

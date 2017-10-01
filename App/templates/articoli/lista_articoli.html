@@ -14,15 +14,13 @@
 
     {% for articolo in articoli%}
 
-
+<center>
     <div class="container hoverable">
-<div class="row">
-        <div class="col-md-3">
-            <div class="col-md-12">  </div>
 
+<div class="caption">
             <div class="thumbnail">
-          <img src="{{articolo.foto.url}}" alt="...">
-          <div class="caption">
+          <img class="foto-icona" src="{{articolo.foto.url}}" alt="...">
+
 
 
 
@@ -37,14 +35,11 @@
                </div>
 
 
-          </div>
-        </div>
-        </div>
       </div>
     </div>
     </div>
 <br>
-
+</center>
     {% endfor %}
 
 
