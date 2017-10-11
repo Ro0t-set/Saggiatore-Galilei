@@ -19,3 +19,7 @@ class ArticoloForm(forms.ModelForm):
 class CercaArticoli(forms.Form):
     q = forms.CharField(label='nome', max_length="100")
     #autore = forms.ModelChoiceField(queryset=User.objects.all())
+
+class Mail(forms.Form):
+    testo=forms.CharField(label='testo', max_length="1000")
+    mail= forms.EmailField(label='mail', max_length="100")

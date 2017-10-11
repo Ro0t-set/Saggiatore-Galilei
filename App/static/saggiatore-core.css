@@ -53,7 +53,10 @@ margin-top: 2%
  float:right;
 left:-200;
 background-color: white;  
-z-index: 0;  
+z-index: 0; 
+-webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .menu ul{
     width:100%;
@@ -87,6 +90,7 @@ margin-top:10px;
 
 .menu ul li:hover a{
 color:black;
+
 }
 
 
@@ -238,6 +242,21 @@ li a:hover {
 .foto-icona{
 	width: 350px; height: auto;
 	border-radius: 3px;
+}
+
+input{
+	padding: 10px;
+	border-radius: 3px;
+	border:solid 1px;
+  	border-color: #20B2AA;
+  	outline-color: none;
+  	
+
+}
+
+input:hover{
+	
+	transition-duration: 0.5s;
 }
 
 

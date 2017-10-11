@@ -4,6 +4,7 @@
 	border:solid 1px;
 	padding: 100px; 
 	border-radius: 17px;
+	outline: none;
 }
 
 .username{
@@ -12,6 +13,7 @@
 	padding: 10px;
 	opacity: 0.5;
 	transition-duration: 0.5s;
+	outline: none;
 }
 
 .password{
@@ -20,16 +22,19 @@
 	padding: 10px;
 	opacity: 0.5;
 	transition-duration: 0.5s;
+	outline: none;
 }
 
 .username:hover{
 	padding: 12px;
 	opacity: 0.6;
+	outline: none;
 	
 }
 .password:hover{
 	padding: 12px;
 	opacity: 0.6;
+	outline: none;
 	
 }
 
@@ -37,5 +42,5 @@
 
 
 .login-button{
-	background-color: black;
+	background-color: white;
 }

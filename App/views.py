@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Articolo, Categoria
-from .forms import ArticoloForm, CercaArticoli
+from .forms import ArticoloForm, CercaArticoli, Mail
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -80,3 +80,17 @@ def pubblica(request):
     else:
         form = ArticoloForm()
     return render(request, 'articoli/pubblica.html', {'form': form})
+
+def scrivici(request):
+    if request.method == "POST":
+        form = Mail(request.POST)
+        if form.is_valid():
+            subject, from_email, to = form.cleaned_data['mail'], 'mail', 'mail'
+            text_content = '456'
+            html_content =  form.cleaned_data['testo']
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send(fail_silently=False)
+    else:
+        form = Mail()
+    return render(request, 'articoli/scrivici.html', {'form': form})

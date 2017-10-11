@@ -1,0 +1,20 @@
+{% extends 'articoli/base.html' %}
+<html>
+{% block content %}
+<body>
+<p>contattaci qui</p>
+
+
+<form method="POST" class="mail">{% csrf_token %}
+mail:{{ form.mail }}
+<br>
+<br>
+testo:{{ form.testo }}
+<br>
+<br>
+<button type="submit" class="save btn btn-default">invia</button>
+
+</form>
+</body>
+</html>
+{% endblock %}

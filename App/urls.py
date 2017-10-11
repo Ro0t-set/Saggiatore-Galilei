@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^pubblica/$', views.pubblica, name='pubblica'),
     url(r'^vedi_tutto/$', views.vedi_tutto, name='vedi_tutto'),
     url(r'^login/$', login, name='login'),
+    url(r'^scrivici/$', views.scrivici, name='scrivici'),
 ]
 
 if settings.DEBUG:
