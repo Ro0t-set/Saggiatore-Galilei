@@ -37,6 +37,12 @@
                         <li ><a href="/">Saggiatore</a></li>
                         <li ><a href="/pubblica">login</a></li>
                         <li ><a href="/scrivici">Scrivici</a></li>
+                        <center>
+                        <li ><i style="color:red;">Categorie:</i></li>
+                      </center>
+                        {% for articolo in articoli%}
+                          <li ><a href="/{{articolo.categorie}}">{{articolo.categorie}}</a></li>
+                          {% endfor %}
 
 
                       </ul>

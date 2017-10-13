@@ -23,13 +23,14 @@ from django.utils.html import strip_tags
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.db.models import Count
 
 
 @csrf_protect
 
 def lista_articoli(request):
-
     articoli =  Articolo.objects.filter(convalida = True)
+    
 
 
     form = CercaArticoli(request.GET)
@@ -76,6 +77,7 @@ def pubblica(request):
             articolo.author = request.user
             articolo.published_date = timezone.now()
             articolo.save()
+            print ("pubblicazione avvenuta con succcesso")
             return redirect('/')
     else:
         form = ArticoloForm()

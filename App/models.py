@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from PIL import Image
 
+
 class Categoria(models.Model):
     categorie = models.CharField(max_length=100)
 

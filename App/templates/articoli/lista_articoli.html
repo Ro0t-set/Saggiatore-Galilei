@@ -8,14 +8,15 @@
 
 
 
-
-
-
+<script type="text/javascript">
+var i =  $("#box :input");
+</script>
 
     {% for articolo in articoli%}
 
 <center>
-    <div class="container hoverable">
+     <form action="/vedi_tutto" method="get">
+    <div class="container hoverable" id="box" type="submit" name="q" value="{{ articolo.titolo }}">
 
 <div class="caption">
             <div class="thumbnail">
@@ -29,7 +30,7 @@
                  <b>{{ articolo.author }}</b>
                  <br>
 
-                 <form action="/vedi_tutto" method="get">
+
                    <input  type="submit" name="q" value="{{ articolo.titolo }}"><br>
                  </form>
                </div>
