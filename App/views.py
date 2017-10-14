@@ -24,18 +24,29 @@ from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.db.models import Count
+from django.contrib.postgres.search import SearchVector
+from django.db.models import Q
 
 
 @csrf_protect
 
 def lista_articoli(request):
     articoli =  Articolo.objects.filter(convalida = True)
-    
-
 
     form = CercaArticoli(request.GET)
+    cerca = request.GET.get("q")
     if form.is_valid():
-        articoli = articoli.filter(titolo= form.cleaned_data["q"])
+
+        articoli = articoli.filter(Q(titolo__icontains=cerca)|
+                                    Q(categorie__categorie__exact=cerca)|
+                                    Q(text__icontains=cerca))
+
+
+
+        #articoli = Articolo.objects.filter (categorie__categorie__exact= form.cleaned_data["q"])
+
+
+
 
     paginator = Paginator(articoli, 3)
     page = request.GET.get('page')

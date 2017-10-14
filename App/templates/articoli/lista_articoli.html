@@ -4,9 +4,19 @@
 
 {% block content %}
 
+
+
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">Indietro</a></form>
 
+<div class="categorie">
+<i style="color:red;">Categorie:</i></li>
+<br>
+ {% for articolo in articoli%}
+ <a href="/?q={{articolo.categorie}}">{{articolo.categorie}}</a>
+ <br>
 
+   {% endfor %}
+<div>
 
 <script type="text/javascript">
 var i =  $("#box :input");
@@ -42,6 +52,8 @@ var i =  $("#box :input");
 <br>
 </center>
     {% endfor %}
+
+
 
 
 <div class="pagination">
