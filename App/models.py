@@ -11,6 +11,8 @@ class Categoria(models.Model):
     def __str__(self):
         return self.categorie
 
+
+
 class Articolo(models.Model):
     author = models.ForeignKey('auth.User')
     categorie = models.ForeignKey('Categoria')

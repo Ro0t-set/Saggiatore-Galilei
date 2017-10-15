@@ -26,25 +26,29 @@ from django.core.files.storage import FileSystemStorage
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector
 from django.db.models import Q
+from django.contrib.auth.models import User
+from django.contrib.auth.validators import ASCIIUsernameValidator
+
 
 
 @csrf_protect
 
 def lista_articoli(request):
     articoli =  Articolo.objects.filter(convalida = True)
-
+    categorie = Categoria.objects.all()
+    autori = User.objects.all()
     form = CercaArticoli(request.GET)
     cerca = request.GET.get("q")
+    filtro_categoria= request.GET.get("c")
+    filtro_autori= request.GET.get("a")
     if form.is_valid():
-
         articoli = articoli.filter(Q(titolo__icontains=cerca)|
-                                    Q(categorie__categorie__exact=cerca)|
                                     Q(text__icontains=cerca))
+    if filtro_categoria:
+        articoli = articoli.filter(Q(categorie__categorie__exact=filtro_categoria))
 
-
-
-        #articoli = Articolo.objects.filter (categorie__categorie__exact= form.cleaned_data["q"])
-
+    if filtro_autori:
+        articoli = articoli.filter(Q(author__articoli=filtro_autori))
 
 
 
@@ -57,20 +61,7 @@ def lista_articoli(request):
     except EmptyPage:
         articoli = paginator.page(paginator.num_pages)
 
-
-
-
-
-
-    #autori_filter= Articolo.objects.all()
-    #autori_filter = request.GET.get("autore")
-    #if autori_filter:
-        #autori_filter = articoli.filter(author= form.cleaned_data["autore"])
-
-
-
-
-    return render(request, 'articoli/lista_articoli.html', {'articoli' : articoli, 'form' : form})
+    return render(request, 'articoli/lista_articoli.html', {'articoli' : articoli, 'form' : form, 'categorie': categorie, 'autori':autori})
 
 def vedi_tutto(request):
     articoli =  Articolo.objects.all()
@@ -78,6 +69,7 @@ def vedi_tutto(request):
     if articoli:
         articoli = Articolo.objects.filter(titolo= articoli)
         return render(request, 'articoli/vedi_tutto.html', {'articoli' : articoli})
+
 
 @login_required(login_url='/login/')
 def pubblica(request):
@@ -93,6 +85,7 @@ def pubblica(request):
     else:
         form = ArticoloForm()
     return render(request, 'articoli/pubblica.html', {'form': form})
+
 
 def scrivici(request):
     if request.method == "POST":

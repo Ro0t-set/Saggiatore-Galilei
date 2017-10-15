@@ -11,11 +11,18 @@
 <div class="categorie">
 <i style="color:red;">Categorie:</i></li>
 <br>
- {% for articolo in articoli%}
- <a href="/?q={{articolo.categorie}}">{{articolo.categorie}}</a>
+ {% for categoria in categorie%}
+ <a href="/?c={{categoria.categorie}}">{{categoria.categorie}}</a>
  <br>
-
-   {% endfor %}
+{% endfor %}
+<br>
+<i style="color:red;">Autori:</i></li>
+<br>
+ {% for user in autori%}
+ <a href="/?a={{user}}">{{user}}</a>
+ <br>
+ {% endfor %}
+ <br>
 <div>
 
 <script type="text/javascript">
@@ -38,6 +45,7 @@ var i =  $("#box :input");
                   <h3><a href="">{{ articolo.titolo }}</a></h3>
                 {{ articolo.published_date }}
                  <b>{{ articolo.author }}</b>
+
                  <br>
 
 
