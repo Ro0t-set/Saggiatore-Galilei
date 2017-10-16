@@ -215,10 +215,8 @@ li a:hover {
 
 .container {
 	float: left;
-	clear: right;
 	margin: 10px;
-	
-  -webkit-transition: -webkit-box-shadow .25s;
+	-webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
@@ -262,20 +260,20 @@ input:hover{
 	transition-duration: 0.5s;
 }
 
-.categorie{
-	float: left;
-	left: 50px;
-}
+
 
 .pagination{
 	position: relative;
 	top: 95%;
-	right: 80%;
-	
+
 }
 
 .colonna_centrale{
-	width: 1000px;
+	width: 73%;
+}
+
+.icona_gg{
+	width: 100px;
 	height: auto;
 }
 

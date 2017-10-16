@@ -9,21 +9,7 @@
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">Indietro</a></form>
 
 
-<div class="categorie">
-<i style="color:red;">Categorie:</i></li>
-<br>
- {% for categoria in categorie%}
- <a href="/?c={{categoria.categorie}}">{{categoria.categorie}}</a>
- <br>
-{% endfor %}
-<br>
-<i style="color:red;">Autori:</i></li>
-<br>
- {% for user in autori%}
- <a href="/?a={{user}}">{{user}}</a>
- <br>
- {% endfor %}
-</div>
+
 
 <script type="text/javascript">
 var i =  $("#box :input");
@@ -66,8 +52,5 @@ var i =  $("#box :input");
     </span>
     <p>creato da<a>Tommaso Patriti</a> (4F)</p>
 </div>
-
-
-
 
 {% endblock content %}

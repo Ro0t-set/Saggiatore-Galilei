@@ -65,10 +65,20 @@ def lista_articoli(request):
 
 def vedi_tutto(request):
     articoli =  Articolo.objects.all()
+    categorie = Categoria.objects.all()
+    autori = User.objects.all()
     articoli = request.GET.get("q")
+    filtro_categoria= request.GET.get("c")
+    filtro_autori= request.GET.get("a")
+    if filtro_categoria:
+        articoli = articoli.filter(Q(categorie__categorie__exact=filtro_categoria))
+
+    if filtro_autori:
+        articoli = articoli.filter(Q(author__username=filtro_autori))
+
     if articoli:
         articoli = Articolo.objects.filter(titolo= articoli)
-        return render(request, 'articoli/vedi_tutto.html', {'articoli' : articoli})
+        return render(request, 'articoli/vedi_tutto.html', {'articoli' : articoli, 'categorie': categorie, 'autori':autori})
 
 
 @login_required(login_url='/login/')

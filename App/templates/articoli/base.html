@@ -19,7 +19,8 @@
 <header>
       <div id="container">
 
-        <center><h1 id="titolo">Saggiatore</h1></center>
+        <center><h1 id="titolo">Saggiatore</h1><img src="/media/media/icone/logo.png" class="icona_gg"></center>
+       
 
             <div class="menu">
 
@@ -31,14 +32,26 @@
               </center>
             </div>
                       <ul>
-                        <li ><a href="/">Saggiatore</a></li>
-                        <li ><a href="/pubblica">login</a></li>
-                        <li ><a href="/scrivici">Scrivici</a></li>
+                        <li><a href="/">Saggiatore</a></li>
+                        <li><a href="/pubblica">login</a></li>
+                        <li><a href="/scrivici">Scrivici</a></li>
+                        <li><i style="color:red;">Categorie:</i></li>
+                         {% for categoria in categorie%}
+                        <li><a href="/?c={{categoria.categorie}}"> {{categoria.categorie}}</a></li>
+                        {% endfor %}
+                        <li><i style="color:red;">Autori:</i></li>
+                        {% for user in autori%}
+                        <li><a href="/?a={{user}}">{{user}}</a>
+                        {% endfor %}</li>
+                      </ul>
+                    </div>
+                  </div>
+
                         <center>
                         
 
 
-                      </ul>
+                        </ul>
 
               </div>
               <div class="closeButton"><a class="icon-close"></a></div>
@@ -57,14 +70,14 @@
               $('#menuButton').click(function()
             {
                  $('.menu').
-                        animate({"left":"0px"}, 1000);
+                        animate({"left":"0px"}, 100);
                    });
 
 
               $('#menuButton').click(function()
             {
                  $('.closeButton').
-                        animate({"left":"160px"}, 1000);
+                        animate({"left":"160px"}, 100);
                    });
 
 
@@ -73,12 +86,12 @@
 
                    $('.closeButton').click(function()
             {
-                 $('.menu').animate({"left":"-200px"}, 1000);
+                 $('.menu').animate({"left":"-200px"}, 100);
             });
 
                    $('.closeButton').click(function()
             {
-                 $('.closeButton').animate({"left":"-160px"}, 1000);
+                 $('.closeButton').animate({"left":"-160px"}, 100);
             });
 
 
