@@ -48,11 +48,11 @@ def lista_articoli(request):
         articoli = articoli.filter(Q(categorie__categorie__exact=filtro_categoria))
 
     if filtro_autori:
-        articoli = articoli.filter(Q(author__articoli=filtro_autori))
+        articoli = articoli.filter(Q(author__username=filtro_autori))
 
 
 
-    paginator = Paginator(articoli, 3)
+    paginator = Paginator(articoli, 6)
     page = request.GET.get('page')
     try:
         articoli = paginator.page(page)

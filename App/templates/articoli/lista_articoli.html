@@ -8,6 +8,7 @@
 
 <form method="GET" action=""> {{ form.q }}<input type="submit" value="Search"> <a href="/">Indietro</a></form>
 
+
 <div class="categorie">
 <i style="color:red;">Categorie:</i></li>
 <br>
@@ -22,47 +23,32 @@
  <a href="/?a={{user}}">{{user}}</a>
  <br>
  {% endfor %}
- <br>
-<div>
+</div>
 
 <script type="text/javascript">
 var i =  $("#box :input");
 </script>
 
-    {% for articolo in articoli%}
-
 <center>
-     <form action="/vedi_tutto" method="get">
-    <div class="container hoverable" id="box" type="submit" name="q" value="{{ articolo.titolo }}">
-
-<div class="caption">
-            <div class="thumbnail">
-          <img class="foto-icona" src="{{articolo.foto.url}}" alt="...">
-
-
-
-
-                  <h3><a href="">{{ articolo.titolo }}</a></h3>
-                {{ articolo.published_date }}
-                 <b>{{ articolo.author }}</b>
-
-                 <br>
-
-
-                   <input  type="submit" name="q" value="{{ articolo.titolo }}"><br>
-                 </form>
-               </div>
-
-
-      </div>
-    </div>
-    </div>
-<br>
+<div class="colonna_centrale">
+{% for articolo in articoli%}
+ <center>
+<form action="/vedi_tutto" method="get">
+<div class="container hoverable" id="box" type="submit" name="q" value="{{ articolo.titolo }}">
+<img class="foto-icona" src="{{articolo.foto.url}}" alt="...">
+<h3><a href="">{{ articolo.titolo }}</a></h3>
+{{ articolo.published_date }}
+<b>{{ articolo.author }}</b>
+<input  type="submit" name="q" value="{{ articolo.titolo }}">
+</form>
+</div>
 </center>
-    {% endfor %}
-
-
-
+{% endfor %}
+</div>
+</form>
+</center>
+</div>
+</center>
 
 <div class="pagination">
     <span class="step-links">
@@ -78,10 +64,10 @@ var i =  $("#box :input");
             <a href="?page={{ articoli.next_page_number }}">next</a>
         {% endif %}
     </span>
+    <p>creato da<a>Tommaso Patriti</a> (4F)</p>
 </div>
 
-<div class="col-md-10">
-<p>creato da<a>Tommaso Patriti</a> (4F)</p>
-</div>
+
+
 
 {% endblock content %}

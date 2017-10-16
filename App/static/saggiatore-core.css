@@ -214,6 +214,10 @@ li a:hover {
 
 
 .container {
+	float: left;
+	clear: right;
+	margin: 10px;
+	
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
@@ -221,11 +225,10 @@ li a:hover {
   padding: 24px;
   border-radius: 3px;
   background-color: #fff;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   border:solid 1px;
   border-color: #20B2AA;
- 	align-self: center;
 }
 .hoverable {
   -webkit-transition: -webkit-box-shadow .25s;
@@ -240,7 +243,7 @@ li a:hover {
 }
 
 .foto-icona{
-	width: 350px; height: 250px;
+	width: 250px; height: 150px;
 	border-radius: 3px;
 }
 
@@ -260,8 +263,20 @@ input:hover{
 }
 
 .categorie{
+	float: left;
+	left: 50px;
+}
+
+.pagination{
+	position: relative;
+	top: 95%;
+	right: 80%;
 	
-	left: 30px;
+}
+
+.colonna_centrale{
+	width: 1000px;
+	height: auto;
 }
 
 
