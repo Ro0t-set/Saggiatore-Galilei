@@ -9,7 +9,7 @@
 <center>
 <div class="login">
     {% if form.errors %}
-        <p class="login_error">Your username and password didn't match. Please try again.</p>
+        <p class="login_error">username o password errati. Riprovare nuovamente</p>
     {% endif %}
     <form class="form" method="post" action="." >{% csrf_token %}
         <input class="username" type="text" placeholder="Username" name="username">

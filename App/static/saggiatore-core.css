@@ -241,7 +241,7 @@ li a:hover {
 }
 
 .foto-icona{
-	width: 250px; height: 150px;
+	width: 250px; height: 140px;
 	border-radius: 3px;
 }
 
@@ -269,12 +269,51 @@ input:hover{
 }
 
 .colonna_centrale{
-	width: 73%;
+	width: 970px;
 }
 
 .icona_gg{
 	width: 100px;
 	height: auto;
+}
+
+.foto_tutto{
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.articolo_centrale{
+  width: 700px; 
+}
+
+.titolo{
+  color:  #20B2AA;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.testo{
+  text-align: justify; 
+  text-indent: 12px;
+
+
+}
+
+.bottone_titolo{
+  border-color: transparent;
+  background-color: transparent;
+  font-size: 19px;
+  color: blue;
+  text-decoration: underline;
+
+
+
+}
+
+.bottone_titolo:hover{
+  color: red;
 }
 
 

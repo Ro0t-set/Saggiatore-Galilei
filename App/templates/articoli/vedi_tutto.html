@@ -3,11 +3,21 @@
 
     {% for articolo in articoli%}
       {% if articolo.convalida == True %}
-      {{ articolo.published_date }}  <h10>{{ articolo.author }}</h10>
+      <center>
+<div class="articolo_centrale">
+     
       <br>
-      <img src="{{articolo.foto.url}}" alt="...">
-                <h3><a href="">{{ articolo.titolo|safe }}</a></h3>
-                <p>{{ articolo.text|safe }}</p>
+      <h2 class="titolo">{{ articolo.titolo|safe }}</h2>
+      <img src="{{articolo.foto.url}}" alt="..." class="foto_tutto">
+      <p class="testo">{{ articolo.text|safe }}</p>
+      <br>
+      <br>
+       {{ articolo.published_date }}  <h10><b>{{ articolo.author }}</b></h10>
+       <br>
+       <br>
+</div>
+	</center>
+
   {% endif %}
 {% endfor %}
 

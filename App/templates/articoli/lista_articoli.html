@@ -22,10 +22,11 @@ var i =  $("#box :input");
 <form action="/vedi_tutto" method="get">
 <div class="container hoverable" id="box" type="submit" name="q" value="{{ articolo.titolo }}">
 <img class="foto-icona" src="{{articolo.foto.url}}" alt="...">
-<h3><a href="">{{ articolo.titolo }}</a></h3>
+<input  type="submit" name="q" value="{{ articolo.titolo }}" class="bottone_titolo">
+<br>
+<br>
 {{ articolo.published_date }}
 <b>{{ articolo.author }}</b>
-<input  type="submit" name="q" value="{{ articolo.titolo }}">
 </form>
 </div>
 </center>
